@@ -4,7 +4,7 @@ export default function Topbar({ admin = false }: { admin?: boolean }) {
   return (
     <header className="topbar">
       <Link className="brand" href="/">
-        <img className="brand-logo" src="/card/logo.png" alt="豐宥好宅" />
+        <img className="brand-logo" src="/card/mascot.png" alt="梁淑珠 Q 版形象" />
         <span>{admin ? "預約管理" : "豐宥好宅"}</span>
       </Link>
       <nav className="topnav" aria-label="主要導覽">

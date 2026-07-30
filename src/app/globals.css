@@ -55,7 +55,7 @@ a {
 }
 
 .topbar {
-  height: 64px;
+  height: 76px;
   padding: 0 24px;
   background: var(--navy-950);
   color: #fff;
@@ -84,9 +84,12 @@ a {
 }
 
 .brand-logo {
-  height: 34px;
+  height: 60px;
   width: auto;
-  border-radius: 6px;
+  border-radius: 10px;
+  background: #fff;
+  object-fit: contain;
+  padding: 2px 4px;
 }
 
 .topnav {
