@@ -84,12 +84,13 @@ a {
 }
 
 .brand-logo {
-  height: 60px;
-  width: auto;
-  border-radius: 10px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
   background: #fff;
   object-fit: contain;
-  padding: 2px 4px;
+  padding: 4px;
+  flex-shrink: 0;
 }
 
 .topnav {
