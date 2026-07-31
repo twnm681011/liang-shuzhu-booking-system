@@ -216,18 +216,3 @@ export async function updateAppointmentStatus(id: string, status: AppointmentSta
   };
   return pool ? apply() : withLock(apply);
 }
-
-export async function resetDemoAppointments() {
-  if (pool) {
-    await ensureTable();
-    await pool.query(`UPDATE appointments_store SET rows = '[]'::jsonb WHERE id = 1`);
-    return;
-  }
-  return withLock(async () => {
-    try {
-      await fs.unlink(DATABASE_FILE);
-    } catch (error) {
-      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
-    }
-  });
-}
