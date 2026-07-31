@@ -11,7 +11,7 @@ export default function Topbar({ admin = false }: { admin?: boolean }) {
         <a href="https://twnm681011.github.io/liang-shuzhu-realtor-site/">官網</a>
         <Link href="/card">名片</Link>
         <Link href="/card/booking">預約</Link>
-        <Link href="/admin/appointments">後台</Link>
+        {admin && <Link href="/admin/appointments">後台</Link>}
       </nav>
     </header>
   );
