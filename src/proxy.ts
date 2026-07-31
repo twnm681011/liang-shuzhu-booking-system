@@ -1,14 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const CARD_ALIAS_HOST = "liang-shuzhu-card.vercel.app";
-
 export function proxy(request: NextRequest) {
-  // 電子名片專屬網址：根目錄直接顯示名片頁內容
-  if (request.nextUrl.pathname === "/" && request.headers.get("host") === CARD_ALIAS_HOST) {
-    return NextResponse.rewrite(new URL("/card", request.url));
-  }
-
   const password = process.env.ADMIN_PASSWORD;
   if (!password) {
     return NextResponse.next();
@@ -33,5 +26,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/admin/:path*", "/api/appointments/:path*"],
+  matcher: ["/admin/:path*", "/api/appointments/:path*"],
 };
