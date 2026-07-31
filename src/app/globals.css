@@ -254,16 +254,18 @@ a {
 .card-cover {
   height: 112px;
   background:
-    linear-gradient(120deg, rgba(239, 189, 69, 0.95), rgba(239, 189, 69, 0.55) 38%, transparent 39%),
+    linear-gradient(120deg, rgba(140, 168, 143, 0.95), rgba(140, 168, 143, 0.55) 38%, transparent 39%),
     var(--navy-900);
-  padding: 20px;
+  padding: 16px 20px;
   color: #fff;
   font-weight: 900;
+  font-size: clamp(0.78rem, 3.6vw, 1rem);
   text-align: right;
+  white-space: nowrap;
 }
 
 .portrait-wrap {
-  margin-top: -78px;
+  margin-top: -56px;
   text-align: center;
 }
 
