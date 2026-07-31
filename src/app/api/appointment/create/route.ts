@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 
     if (!name || name.length > 80) return bad("請填寫姓名。");
     if (!/^[0-9+() -]{8,20}$/.test(phone)) return bad("電話格式看起來不正確。");
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 160) return bad("Email 格式看起來不正確。");
+    if (email && (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 160)) return bad("Email 格式看起來不正確。");
     if (!MEET_TYPE_KEYS.includes(meetType)) return bad("請選擇見面方式。");
     if (!intent.length || !intent.every((key: string) => INTENT_KEYS.includes(key))) return bad("請至少選擇一個需求。");
     if (!URGENCY_KEYS.includes(urgency)) return bad("請選擇預計處理時間。");

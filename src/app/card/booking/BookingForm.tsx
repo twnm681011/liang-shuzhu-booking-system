@@ -64,7 +64,7 @@ export default function BookingForm() {
 
     if (!slotIso) return setError("請先選擇日期與時段。");
     if (!meetType) return setError("請選擇見面方式。");
-    if (!name.trim() || !phone.trim() || !email.trim()) return setError("請填妥姓名、電話與 Email。");
+    if (!name.trim() || !phone.trim()) return setError("請填妥姓名與電話。");
     if (!intent.length) return setError("請至少選擇一個需求。");
     if (!urgency) return setError("請選擇預計處理時間。");
     if (!note.trim()) return setError("請簡單描述需求。");
@@ -219,7 +219,7 @@ export default function BookingForm() {
               <input id="phone" autoComplete="tel" inputMode="tel" maxLength={20} onChange={(event) => setPhone(event.target.value)} value={phone} />
             </div>
             <div className="field full">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email（選填）</label>
               <input id="email" autoComplete="email" inputMode="email" maxLength={160} onChange={(event) => setEmail(event.target.value)} value={email} />
             </div>
           </div>
